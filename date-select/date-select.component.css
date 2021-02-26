@@ -1,0 +1,7 @@
+.date-select{
+  with: 150px;
+}
+.date-select .ant-select{
+  width: 100px;
+  margin-right: 5px;
+}

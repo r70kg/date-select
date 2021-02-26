@@ -1,0 +1,45 @@
+<div class="date-select">
+  <!--年-->
+  <nz-select
+    nzAllowClear
+    nzPlaceHolder="请选择"
+    [ngModel]="year"
+    (ngModelChange)="addQuarter($event)"
+  >
+    <nz-option
+      *ngFor="let item of (years$ | async);index as i"
+      [nzValue]="item.value"
+      [nzLabel]="item.key"
+    ></nz-option>
+
+
+
+
+  </nz-select>
+
+  <!--季度-->
+  <nz-select
+    nzPlaceHolder="请选择"
+    [ngModel]="quarter"
+    (ngModelChange)="addMonth($event)"
+  >
+    <nz-option
+      *ngFor="let item of qrList;index as i"
+      [nzValue]="item.value"
+      [nzLabel]="item.text">
+    </nz-option>
+  </nz-select>
+
+  <!--月-->
+  <nz-select
+    nzPlaceHolder="请选择"
+    [ngModel]="month"
+    (ngModelChange)="monthChange($event)"
+  >
+    <nz-option
+      *ngFor="let item of monthList;index as i"
+      [nzValue]="item.value"
+      [nzLabel]="item.text">
+    ></nz-option>
+  </nz-select>
+</div>
